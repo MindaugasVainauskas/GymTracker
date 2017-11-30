@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymTrackerApp.Model
+using GymTrackerApp.Models;
+
+namespace GymTrackerApp.ViewModels
 {
-    class SessionDate
+    class SessionViewModel
     {
-        public DateTime sessDate;
+       
     }
 }

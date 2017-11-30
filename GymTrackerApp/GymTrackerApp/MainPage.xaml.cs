@@ -25,6 +25,12 @@ namespace GymTrackerApp
         public MainPage()
         {
             this.InitializeComponent();
+            navigate();
+        }
+
+        public void navigate()
+        {
+            Frame.Navigate(typeof(SessionView));
         }
     }
 }
