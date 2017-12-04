@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymTrackerApp.Data;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,20 +18,19 @@ using Windows.UI.Xaml.Navigation;
 
 namespace GymTrackerApp
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
+        List<GymSession> sessions = new List<GymSession>();
         public MainPage()
         {
             this.InitializeComponent();
-            navigate();
         }
 
-        public void navigate()
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Frame.Navigate(typeof(SessionView));
+            base.OnNavigatedTo(e);
+            sessions = await ConnectionHelper.getAllSessions();
+            lsvSessions.ItemsSource = sessions;
         }
     }
 }
