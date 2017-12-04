@@ -21,6 +21,7 @@ namespace GymTrackerApp
     public sealed partial class MainPage : Page
     {
         List<GymSession> sessions = new List<GymSession>();
+        string colName = DBData.COLLECTION_NAME;
         public MainPage()
         {
             this.InitializeComponent();
